@@ -1,8 +1,9 @@
-require './search'
+require './lib/api/search'
 
 search = API::Search.new
 
 results = search.tv('Spongebob')
+
 results["results"].each do |show|
     puts "Show ##{show["id"]}: #{show["name"]}"
 end

@@ -9,7 +9,7 @@ module API
         
         def initialize
             @options = {}
-            @api_key = "?api_key=#{env[API_KEY]}"
+            @api_key = "?api_key=#{ENV["API_KEY"]}"
         end
         
         def tv(query)

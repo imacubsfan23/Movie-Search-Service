@@ -1,2 +1,2 @@
-class Show < ApplicationRecord
+class Show < API
 end

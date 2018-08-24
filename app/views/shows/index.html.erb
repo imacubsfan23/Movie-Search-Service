@@ -1,10 +1,12 @@
+<h1>Search for a show</h1>
+
 <h1>Popular Shows</h1>
 <table>
     <tr>
         <% @popular_shows[0...7].each do |show| %>
         <td>
             <div>
-                <img src="https://image.tmdb.org/t/p/w500/<%= show["poster_path"] %>" alt=<%= show["name"] %>></img>
+                <%= link_to image_tag("https://image.tmdb.org/t/p/w500/#{show["poster_path"]}"), show_path, :id => show["id"] %>
             </div>
         </td>
         <% end %>

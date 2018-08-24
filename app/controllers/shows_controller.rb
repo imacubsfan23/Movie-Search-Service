@@ -3,14 +3,10 @@ class ShowsController < ApplicationController
     @discover = API::Discover.new
     @popular_shows = @discover.tv["results"]
   end
-  
-  def search
-    @search = API::Search.new
-    @shows = search.tv["results"]
-  end
 
-  def show(index)
+  def show
     @search = API::Search.new
-    @show = @search.tv["results"][index]
+    @id = @search.find(params[:id])
+    @show = @search.(@id)["results"]
   end
 end

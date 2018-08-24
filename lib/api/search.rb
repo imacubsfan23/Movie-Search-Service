@@ -23,3 +23,6 @@ module API
         end
     end
 end
+
+first_movie = "#{API::Search.new.movie('Spongebob')["results"][0]}"
+puts first_movie.gsub("=>", ":")

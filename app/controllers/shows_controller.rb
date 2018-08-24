@@ -5,8 +5,7 @@ class ShowsController < ApplicationController
   end
 
   def show
-    @search = API::Search.new
-    @id = @search.find(params[:id])
-    @show = @search.(@id)["results"]
+    @search = API::Search.new.tv(query)["results"]
+    @show = @search.tv["results"]
   end
 end

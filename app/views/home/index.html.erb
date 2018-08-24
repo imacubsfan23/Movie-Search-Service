@@ -1,6 +1,7 @@
 <h1>Search for a show</h1>
-<% form_for @search, :as => :show, :url => shows_path(@search) do |f| %>
-    <%= f.text_field :query %>
+<% form_tag(shows_path) do |f| %>
+    <%= text_field_tag :query %>
+    <%= submit_tag "Search" %>
 <% end %>
 <h1>Popular Shows</h1>
 <table>

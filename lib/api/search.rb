@@ -5,7 +5,7 @@ require 'json'
 module API
     class Search
         include HTTParty
-        base_uri 'api.themoviedb.org/3/search'
+        base_uri 'api.themoviedb.org/3/'
         
         def initialize
             @options = {}

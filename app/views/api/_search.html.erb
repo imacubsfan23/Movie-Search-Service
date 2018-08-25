@@ -6,7 +6,7 @@
         
         <br><br>
         
-        <% if @queried_shows[0] %>
+        <% if @queried_shows && @queried_shows[0] %>
             <h2>Results for "<%= params[:query] %>"</h2>
             <% @queried_shows[0...7].each do |show| %>
                 <td>
@@ -29,7 +29,7 @@
                 </td>
             <% end %>
         <% else %>
-            <h2>No results for "<%= params[:query] %>"</h2>
+            <h2>&#9785; That's not a show &#9785;</h2>
         <% end %>
     </tr>
 </table>

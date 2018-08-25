@@ -18,13 +18,16 @@ html {
     text-align: center;
     margin: 0 auto;
     padding: 0;
+    background-color: rgba(0,0,100,0.5);
+    color: white;
 }
 
 img{
     bottom: 0;
     right: 0;
-    max-height: 40vh;
+    max-width: 15vh;
     margin: 0.5vh;
+    border: 1px solid black;
 }
 td:hover img {
     margin: 0;
@@ -37,24 +40,33 @@ table, tr, td {
     margin: 2px auto;
 }
 
+table {
+    margin-bottom: 6vh;
+}
+
 td div {
     height: 80%;
 }
 
 .arrow {
-    height: 120%;
+    height: 95%;
     width: 97%;
     bottom: 0;
     right: 0;
-    max-height: 40vh;
-    margin: 5vh auto;
-    margin-top: 1vh;
-    
-    font-size: 20vh;
-    background-color: black;
+    max-width: 15vh;
+    margin: 1vh auto;
+    font-size: 10vh;
+    background-color: rgba(0,0,0,0.7);
     color: white;
+    
+    padding-top: 4vh;
+    border: 1px solid black;
 }
 td:hover .arrow {
     margin-top: 0;
     box-shadow: -3px 6px 10px rgba(0,0,0,0.6);
+}
+
+input {
+    color: black;
 }

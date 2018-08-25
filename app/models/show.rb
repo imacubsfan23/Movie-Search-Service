@@ -1,2 +1,2 @@
-class Show < API
+class Show < Api
 end

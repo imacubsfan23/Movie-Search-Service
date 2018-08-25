@@ -2,37 +2,11 @@
 
 <h1>Popular Shows</h1>
 <table>
+    <% @shows.each do |show| %>
     <tr>
-        <% @popular_shows[0...7].each do |show| %>
-        <td>
-            <div>
-                <%= link_to image_tag("https://image.tmdb.org/t/p/w500/#{show["poster_path"]}"), show_path, :id => show["id"] %>
-            </div>
-        </td>
-        <% end %>
+        <div><img src="https://image.tmdb.org/t/p/w500/<%= show["poster_path"] %>" alt=<%= show["name"] %> ></img></div>
+        <%= show["name"] %>
     </tr>
-    <tr>
-        <% @popular_shows[7...14].each do |show| %>
-        <td>
-            <div>
-                <img src="https://image.tmdb.org/t/p/w500/<%= show["poster_path"] %>" alt=<%= show["name"] %>></img>
-            </div>
-        </td>
-        <% end %>
-    </tr>
-    <tr>
-        <% @popular_shows[14...20].each do |show| %>
-        <td>
-            <div>
-                <img src="https://image.tmdb.org/t/p/w500/<%= show["poster_path"] %>" alt=<%= show["name"] %>></img>
-            </div>
-        </td>
-        <% end %>
-        <td>
-            <div>
-                <div class="arrow">&#8594</div>
-            </div>
-        </td>
-    </tr>
+    <% end %>
 </table>
 

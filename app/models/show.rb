@@ -8,6 +8,6 @@ class Show < Api
     
     def tv(id=nil)
         @id = id
-        self.class.get("/#{@id}#{@api_key}") || 404
+        self.class.get("/#{@id}#{@api_key}")
     end
 end

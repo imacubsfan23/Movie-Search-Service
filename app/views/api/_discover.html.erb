@@ -1,0 +1,47 @@
+<table>
+    <tr>
+        <% @popular_shows[0...7].each do |show| %>
+        <td>
+            <div>
+                <%= 
+                    link_to image_tag("https://image.tmdb.org/t/p/w185/#{show["poster_path"]}", 
+                    alt:"#{show["name"]}"), 
+                    show_path(show["id"]),
+                    :class => "img" 
+                %>
+            </div>
+        </td>
+        <% end %>
+    </tr>
+    <tr>
+        <% @popular_shows[7...14].each do |show| %>
+        <td>
+            <div>
+                <%= 
+                    link_to image_tag("https://image.tmdb.org/t/p/w185/#{show["poster_path"]}", 
+                    alt:"#{show["name"]}"), 
+                    show_path(show["id"]),
+                    :class => "img" 
+                %>            </div>
+        </td>
+        <% end %>
+    </tr>
+    <tr>
+        <% @popular_shows[14...20].each do |show| %>
+        <td>
+            <div>
+                <%= 
+                    link_to image_tag("https://image.tmdb.org/t/p/w185/#{show["poster_path"]}", 
+                    alt:"#{show["name"]}"), 
+                    show_path(show["id"]),
+                    :class => "img" 
+                %>            </div>
+        </td>
+        <% end %>
+        <td>
+            <div>
+                <div class="arrow">&#8594</div>
+            </div>
+        </td>
+    </tr>
+</table>

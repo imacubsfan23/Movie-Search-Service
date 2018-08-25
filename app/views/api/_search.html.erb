@@ -1,0 +1,35 @@
+<table>
+    <tr>
+        <%= form_tag(api_index_path, :method => :get) do %>
+            <%= text_field_tag :query, params[:query] %>
+        <% end %>
+        
+        <br><br>
+        
+        <% if @queried_shows[0] %>
+            <h2>Results for "<%= params[:query] %>"</h2>
+            <% @queried_shows[0...7].each do |show| %>
+                <td>
+                        <% if show["poster_path"] %>
+                            <%= 
+                                link_to image_tag("https://image.tmdb.org/t/p/w500/#{show["poster_path"]}", 
+                                alt:"#{show["name"]}"), 
+                                show_path(show["id"]), 
+                                :class => "img" 
+                            %>
+                        <% else %>
+                            <div class="show-link">
+                                <%= 
+                                    link_to "Pictureless: #{show["name"]}", 
+                                    show_path(show["id"]), 
+                                    :class => "img" 
+                                %>
+                            </div>
+                        <% end %>
+                </td>
+            <% end %>
+        <% else %>
+            <h2>No results for "<%= params[:query] %>"</h2>
+        <% end %>
+    </tr>
+</table>

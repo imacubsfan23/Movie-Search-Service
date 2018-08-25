@@ -68,5 +68,18 @@ td:hover .arrow {
 }
 
 input {
-    color: black;
+    height: 8vh;
+    width: 70vh;
+    margin: 0;
+    padding: 0;
+    border: 1px solid white;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    
+    font-size: 6vh;
+    text-align: center;
+    
+    background: #2b303b;
+    color: white;
 }

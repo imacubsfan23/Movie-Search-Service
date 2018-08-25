@@ -22,6 +22,43 @@ html {
     color: white;
 }
 
+.topnav {
+    position: fixed;
+    background-color: #333;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+}.topnav a {
+    color: #f2f2f2;
+    text-align: center;
+    padding: 2vh 2vh;
+    text-decoration: none;
+    font-size: 2vh;
+}.topnav a:hover {
+    background-color: white;
+    color: black;
+}
+
+input {
+    height: 8vh;
+    width: 70vh;
+    margin: 0;
+    padding: 0;
+    border: 1px solid white;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    
+    font-size: 6vh;
+    text-align: center;
+    
+    background: #2b303b;
+    color: white;
+}
+
 img{
     bottom: 0;
     right: 0;
@@ -67,19 +104,4 @@ td:hover .arrow {
     box-shadow: -3px 6px 10px rgba(0,0,0,0.6);
 }
 
-input {
-    height: 8vh;
-    width: 70vh;
-    margin: 0;
-    padding: 0;
-    border: 1px solid white;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-    
-    font-size: 6vh;
-    text-align: center;
-    
-    background: #2b303b;
-    color: white;
-}
+

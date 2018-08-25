@@ -5,7 +5,7 @@ class Discover < Api
     def initialize
         @sort_by = '&popularity.desc'
         @page = '&page=1'
-        @api_key = '?api_key=fb6a1d3f38c3d97f67df6d141f936f29'
+        @api_key = "?api_key=#{ENV["API_KEY"]}"
     end
     
     def tv

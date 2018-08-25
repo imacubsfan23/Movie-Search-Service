@@ -3,7 +3,7 @@
         <% @popular_shows[0...7].each do |show| %>
         <td>
             <div>
-                <img src="https://image.tmdb.org/t/p/w500/<%= show["poster_path"] %>" alt=<%= show["name"] %>></img>
+                <%= link_to image_tag("https://image.tmdb.org/t/p/w185/#{show["poster_path"]}", alt:"#{show["name"]}"), show_path(show["id"]) %>
             </div>
         </td>
         <% end %>
@@ -12,7 +12,7 @@
         <% @popular_shows[7...14].each do |show| %>
         <td>
             <div>
-                <img src="https://image.tmdb.org/t/p/w500/<%= show["poster_path"] %>" alt=<%= show["name"] %>></img>
+                <%= link_to image_tag("https://image.tmdb.org/t/p/w185/#{show["poster_path"]}", alt:"#{show["name"]}"), show_path(show["id"]) %>
             </div>
         </td>
         <% end %>
@@ -21,7 +21,7 @@
         <% @popular_shows[14...20].each do |show| %>
         <td>
             <div>
-                <img src="https://image.tmdb.org/t/p/w500/<%= show["poster_path"] %>" alt=<%= show["name"] %>></img>
+                <%= link_to image_tag("https://image.tmdb.org/t/p/w185/#{show["poster_path"]}", alt:"#{show["name"]}"), show_path(show["id"]) %>
             </div>
         </td>
         <% end %>

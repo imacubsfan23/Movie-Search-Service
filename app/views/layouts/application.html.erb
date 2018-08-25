@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Workspace</title>
+    <title>Movie Search Service</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,10 @@
   </head>
 
   <body>
+    <nav class="topnav">
+      <%= link_to 'Home', root_path %>
+    </nav>
+    
     <%= yield %>
   </body>
 </html>

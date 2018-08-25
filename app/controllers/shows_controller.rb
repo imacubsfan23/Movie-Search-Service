@@ -1,7 +1,5 @@
 class ShowsController < ApplicationController
-  def index
-  end
-
   def show
+    @show = Show.new.tv(params["id"])
   end
 end

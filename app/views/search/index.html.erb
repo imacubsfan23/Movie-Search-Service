@@ -1,0 +1,12 @@
+<h1>Search for a show</h1>
+
+<h1>Popular Shows</h1>
+<table>
+    <% @shows.each do |show| %>
+    <tr>
+        <div><img src="https://image.tmdb.org/t/p/w500/<%= show["poster_path"] %>" alt=<%= show["name"] %> ></img></div>
+        <%= show["name"] %>
+    </tr>
+    <% end %>
+</table>
+

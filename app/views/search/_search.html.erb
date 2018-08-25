@@ -1,0 +1,21 @@
+<table>
+    <tr>
+        <%= form_tag(api_index_path, :method => :get) do %>
+            <%= text_field_tag :query, params[:query] %>
+            <%= submit_tag "⌕" %>
+        <% end %>
+        
+        <br><br><br><br>
+        
+        <h2>Results for "<%= params[:query] %>"</h2>
+        <% @queried_shows[0...7].each do |show| %>
+            <td>
+                <div>
+                    <% if show["poster_path"] %>
+                        <img src="https://image.tmdb.org/t/p/w500/<%= show["poster_path"] %>" alt=<%= show["name"] %> ></img>
+                    <% end %>
+                </div>
+            </td>
+        <% end %>
+    </tr>
+</table>

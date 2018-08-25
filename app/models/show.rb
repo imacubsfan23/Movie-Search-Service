@@ -1,2 +1,2 @@
-class Show < ActiveResource::Base
+class Show < Api
 end

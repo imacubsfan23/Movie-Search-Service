@@ -23,10 +23,10 @@ html {
 }
 
 h1 {
-    font-size: 8vh;
+    font-size: 200%;
 }
 
-.topnav {
+nav {
     position: fixed;
     background-color: #333;
     overflow: hidden;
@@ -36,13 +36,13 @@ h1 {
     left: 0;
     width: 100%;
     border-bottom: 1px solid white;
-}.topnav a {
+}nav a {
     color: #f2f2f2;
     text-align: center;
     padding: 2vh 2vh;
     text-decoration: none;
     font-size: 2vh;
-}.topnav a:hover {
+}nav a:hover {
     background-color: white;
     color: black;
 }
@@ -60,6 +60,14 @@ input {
     font-size: 6vh;
     text-align: center;
     
-    background: #2b303b;
+    background-color: #2b303b;
     color: white;
+}.search-submit {
+    width: 10vh;
+    height: 16vh;
+    background-color: rgba(0,0,0,0);
+    border: none;
+    font-size: 10vh;
+}.search-submit:hover {
+    cursor: pointer;
 }

@@ -7,23 +7,31 @@
             <h1 class="title">
                 <%= link_to @show["name"], @show["homepage"], target: :_blank %>
             </h1>
+            <% if @show && @show["created_by"][0] %>
             <h2>Created by <%= @show["created_by"][0]["name"] %></h2>
+            <% end %>
         </div>
         <table>
             <tr>
-                Genre: <%= @show["genres"][0]["name"] %> |
-                <%= @show["number_of_seasons"] %> Seasons |
-                <%= @show["number_of_episodes"] %> Episodes
+                <% if @show && @show["genres"][0] %>
+                    <%= "Genre: #{@show["genres"][0]["name"]}" %> |
+                <% end %>
+                <% if @show && @show["number_of_seasons"][0] %>
+                    <%= @show["number_of_seasons"] %> Season(s) |
+                <% end %>
+                <% if @show && @show["number_of_episodes"][0] %>
+                    <%= @show["number_of_episodes"] %> Episode(s)
+                <% end %>
             </tr>
         </table>
         <div class="row">
             <h3>Overview</h3> 
-            <div>
+            <div class="overview">
                 <%= @show["overview"] %>
             </div>
         </div>
         <div class="row">
-            <h3>Popularity: <%= @show["popularity"] %></h3>
+            <h3>Popularity Score: <%= @show["popularity"] %></h3>
         </div>
     </div>
 </div>

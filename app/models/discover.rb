@@ -2,9 +2,9 @@ class Discover < Api
     include HTTParty
     base_uri 'api.themoviedb.org/3/discover'
     
-    def initialize
+    def initialize(page=1)
         @sort_by = '&popularity.desc'
-        @page = '&page=1'
+        @page = "&page=#{page}"
         @api_key = "?api_key=#{ENV["API_KEY"]}"
     end
     

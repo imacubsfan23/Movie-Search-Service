@@ -5,7 +5,7 @@
     margin: 0 auto;
     background-color: royalblue;
     border: 1vh solid white;
-    border-top: none;
+    /*border-top: none;*/
     border-radius: 2vh;
     color: white;
 }
@@ -34,4 +34,8 @@ title {
     margin: 0;
 }.title a{
     color: white;
+}
+
+.overview {
+    padding: 0 2vh;
 }

@@ -22,6 +22,11 @@ RSpec.describe Api, type: :model do
       it "is initialized as 'tv'" do
         assert_equal api.mode, "tv"
       end
+      
+      it "can be set to something else" do
+        api.mode = "movie"
+        assert_equal api.mode, "movie"
+      end
     end
   end
 end

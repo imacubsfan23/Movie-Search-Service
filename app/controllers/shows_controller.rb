@@ -1,5 +1,5 @@
 class ShowsController < ApplicationController
   def show
-    @show = Show.new.tv(params["id"])
+    @show = Show.new.make_request(params["id"])
   end
 end

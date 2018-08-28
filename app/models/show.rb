@@ -6,7 +6,7 @@ class Show < Api
         @api_key = "?api_key=#{ENV["API_KEY"]}"
     end
     
-    def tv(id=nil)
+    def make_request(id=nil)
         @id = id
         self.class.get("/#{@id}#{@api_key}")
     end

@@ -1,10 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe Discover do
-  first_tv_page = Discover.new.tv
-  second_tv_page = Discover.new(2).tv
-  first_movie_page = Discover.new.movie
-  second_movie_page = Discover.new(2).movie
+  discover = Discover.new
+  first_tv_page = discover.make_request
+  second_tv_page = discover.make_request("tv", 2)
+  first_movie_page = discover.make_request("movie")
+  second_movie_page = discover.make_request("movie", 2)
   
   context "model" do
     

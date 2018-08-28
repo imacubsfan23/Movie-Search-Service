@@ -1,7 +1,7 @@
 class ApiController < ApplicationController
   def index
-    params[:query] ||= "The Show"
-    @queried_shows = Search.new.tv(params[:query])["results"]
-    @popular_shows = Discover.new.tv["results"]
+    params[:query] ||= "The"
+    @queried = Search.new.make_request(params[:query])["results"]
+    @popular = Discover.new.make_request["results"]
   end
 end

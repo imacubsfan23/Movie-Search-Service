@@ -1,7 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe Show do
-  first_show = Show.new.tv(1)
+  show = Show.new
+  first_show = show.make_request(1)
   
   context "model" do
     it "has accessible attributes when show exists" do
@@ -14,11 +15,11 @@ RSpec.describe Show do
     
     context "has nil id when" do
       it "show doesn't exist" do
-        assert_nil Show.new.tv(-1)["id"]
+        assert_nil show.make_request(-1)["id"]
       end
       
       it "no id given" do
-        assert_nil Show.new.tv["id"]
+        assert_nil show.make_request["id"]
       end
     end
   end

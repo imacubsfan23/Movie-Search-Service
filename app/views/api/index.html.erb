@@ -1,7 +1,7 @@
 <h1>Search for a show</h1>
 <table>
     <tr>
-        <%= form_tag api_index_path, {:method => :get} do %>
+        <%= form_tag root_path, {:method => :get} do %>
             <%= text_field_tag :query, params[:query] %>
             <%= submit_tag "⌕", :class => "search-submit" %>
         <% end %>

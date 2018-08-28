@@ -78,7 +78,9 @@
         <% end %>
         <td>
             <div>
-                <div class="arrow">&#8594</div>
+                <%= link_to root_path({:mode => params[:mode], :page => params[:page].to_i + 1}) do %>
+                    <div class="arrow">&#8594</div>
+                <% end %>
             </div>
         </td>
     </tr>

@@ -13,7 +13,12 @@
 
   <body>
     <nav>
-      <%= link_to 'Home', root_path %>
+      <% if params[:mode] == "movie" %>
+        <%= link_to 'Shows', root_path %>
+      <% end %>
+      <% if params[:mode] == "tv" %>
+        <%= link_to 'Movies', root_path({:mode => "movie"}) %>
+      <% end %>
     </nav>
     
     <%= yield %>

@@ -14,10 +14,10 @@
   <body>
     <nav>
       <% if params[:mode] == "movie" %>
-        <%= link_to 'Shows', root_path %>
+        <%= link_to 'Switch to TV Mode', root_path %>
       <% end %>
       <% if params[:mode] == "tv" %>
-        <%= link_to 'Movies', root_path({:mode => "movie"}) %>
+        <%= link_to 'Switch to Movie Mode', root_path({:mode => "movie"}) %>
       <% end %>
     </nav>
     

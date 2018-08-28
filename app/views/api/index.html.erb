@@ -1,40 +1,39 @@
-<h1>Search for a show</h1>
+<h1>Search for Something!</h1>
 <table>
-    <tr>
-        <%= form_tag root_path, {:method => :get} do %>
-            <%= text_field_tag :query, params[:query] %>
-            <%= submit_tag "⌕", :class => "search-submit" %>
-        <% end %>
-        
-        <br><br>
-        
-        <% if @queried && @queried[0] %>
-            <h2>Results for "<%= params[:query] %>"</h2>
-            <% @queried[0...7].each do |show| %>
-                <td>
-                        <% if show["poster_path"] %>
+    <%= form_tag root_path, {:method => :get} do %>
+        <%= text_field_tag :query, params[:query] %>
+        <%= submit_tag "⌕", :class => "search-submit" %>
+    <% end %>
+    
+    <br><br>
+    
+    <% if @queried && @queried[0] %>
+        <h2>Results for "<%= params[:query] %>"</h2>
+        <% @queried[0...7].each do |show| %>
+            <td>
+                    <% if show["poster_path"] %>
+                        <%= 
+                            link_to image_tag("https://image.tmdb.org/t/p/w500/#{show["poster_path"]}", 
+                            alt:"#{show["name"]}"), 
+                            show_path(show["id"]), 
+                            :class => "img" 
+                        %>
+                    <% else %>
+                        <div class="show-link">
                             <%= 
-                                link_to image_tag("https://image.tmdb.org/t/p/w500/#{show["poster_path"]}", 
-                                alt:"#{show["name"]}"), 
+                                link_to "Pictureless: #{show["name"]}", 
                                 show_path(show["id"]), 
                                 :class => "img" 
                             %>
-                        <% else %>
-                            <div class="show-link">
-                                <%= 
-                                    link_to "Pictureless: #{show["name"]}", 
-                                    show_path(show["id"]), 
-                                    :class => "img" 
-                                %>
-                            </div>
-                        <% end %>
-                </td>
-            <% end %>
-        <% else %>
-            <h2>&#9785; That's not a show &#9785;</h2>
+                        </div>
+                    <% end %>
+            </td>
         <% end %>
-    </tr>
+    <% else %>
+        <h2>&#9785; That does not exist &#9785;</h2>
+    <% end %>
 </table>
+
 <h1>Popular Shows</h1>
 <table>
     <tr>

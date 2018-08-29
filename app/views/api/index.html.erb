@@ -35,9 +35,21 @@
     <td>
         <div>
             <%= link_to root_path({:mode => params[:mode], :page => params[:page].to_i + 1}) do %>
+                
                 <div class="arrow">&#8594</div>
+                
             <% end %>
         </div>
     </td>
     
 </table>
+
+<% content_for :javascript do %>
+    <% if params[:page].to_i > 1 %>
+        <script type="text/javascript">
+            setTimeout(function () {
+                window.scrollTo(0, document.documentElement.scrollHeight);
+            }, 150); 
+        </script>
+    <% end %>
+<% end %>

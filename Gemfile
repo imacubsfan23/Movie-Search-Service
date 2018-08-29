@@ -65,3 +65,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'httparty'
 gem 'figaro'
 gem 'activeresource'
+gem 'jquery-rails'

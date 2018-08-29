@@ -14,13 +14,13 @@
         <table>
             <tr>
                 <% if @show && @show["genres"][0] %>
-                    <%= "Genre: #{@show["genres"][0]["name"]}" %> |
+                    <%= @show["genres"][0]["name"] %>
                 <% end %>
                 <% if @show && @show["number_of_seasons"][0] %>
-                    <%= @show["number_of_seasons"] %> Season(s) |
+                    | <%= @show["number_of_seasons"] %> Season(s)
                 <% end %>
                 <% if @show && @show["number_of_episodes"][0] %>
-                    <%= @show["number_of_episodes"] %> Episode(s)
+                    | <%= @show["number_of_episodes"] %> Episode(s)
                 <% end %>
             </tr>
         </table>

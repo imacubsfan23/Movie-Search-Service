@@ -1,0 +1,38 @@
+<tr>
+    <% @popular[0...7].each do |movie| %>
+    <td>
+        <div>
+            <%= 
+                link_to image_tag("https://image.tmdb.org/t/p/w185/#{movie["poster_path"]}", 
+                alt:"#{movie["title"]}"), 
+                movie_path(movie["id"]),
+                :class => "img" 
+            %>
+        </div>
+    </td>
+    <% end %>
+</tr>
+<tr>
+    <% @popular[7...14].each do |movie| %>
+    <td>
+        <div>
+            <%= 
+                link_to image_tag("https://image.tmdb.org/t/p/w185/#{movie["poster_path"]}", 
+                alt:"#{movie["title"]}"), 
+                movie_path(movie["id"]),
+                :class => "img" 
+            %>            </div>
+    </td>
+    <% end %>
+</tr>
+<% @popular[14...20].each do |movie| %>
+<td>
+    <div>
+        <%= 
+            link_to image_tag("https://image.tmdb.org/t/p/w185/#{movie["poster_path"]}", 
+            alt:"#{movie["title"]}"), 
+            movie_path(movie["id"]),
+            :class => "img" 
+        %>            </div>
+</td>
+<% end %>

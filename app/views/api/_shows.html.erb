@@ -1,0 +1,20 @@
+<% @queried[0...7].each do |show| %>
+    <td>
+            <% if show["poster_path"] %>
+                <%= 
+                    link_to image_tag("https://image.tmdb.org/t/p/w500/#{show["poster_path"]}", 
+                    alt:"#{show["name"]}"), 
+                    show_path(show["id"]), 
+                    :class => "img" 
+                %>
+            <% else %>
+                <div class="show-link">
+                    <%= 
+                        link_to "Pictureless: #{show["name"]}", 
+                        show_path(show["id"]), 
+                        :class => "img" 
+                    %>
+                </div>
+            <% end %>
+    </td>
+<% end %>

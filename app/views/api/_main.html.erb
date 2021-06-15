@@ -20,8 +20,13 @@
         <%= render 'popular_movies' %>
     <% end %>
     <div>
+        <% if params[:page].to_i > 1 %>
+            <%= link_to root_path({:mode => params[:mode], :query => params[:query],:page => params[:page].to_i - 1}) do %>
+                <button class='btn btn-dark text-light'>Previous Page <h1>&#8592</h1></button>
+            <% end %>
+        <% end %>
         <%= link_to root_path({:mode => params[:mode], :query => params[:query],:page => params[:page].to_i + 1}) do %>
-            <button class='btn btn-dark text-light'><h1>&#8594</h1></button>
+            <button class='btn btn-dark text-light'>Next Page <h1>&#8594</h1></button>
         <% end %>
     </div>
 </main>

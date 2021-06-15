@@ -2,7 +2,7 @@
 <%= render 'main' %>
 
 <% content_for :javascript do %>
-    <% if params[:page].to_i >= 1 %>
+    <% if params[:page].to_i > 1 %>
         <script type='text/javascript'>
             setTimeout(function () {
                 window.scrollTo(0, document.documentElement.scrollHeight);

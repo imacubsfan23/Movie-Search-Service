@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.4.0'
+ruby '3.0.1'
 
 gem 'rails'
 gem 'sprockets-rails'
@@ -14,6 +14,8 @@ gem 'coffee-rails'
 gem 'jbuilder'
 
 gem 'bootsnap', require: false
+
+gem 'nokogiri', '>= 1.11.4'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

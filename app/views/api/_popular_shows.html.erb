@@ -1,38 +1,9 @@
-<tr>
-    <% @popular[0...7].each do |show| %>
-    <td>
-        <div>
-            <%= 
-                link_to image_tag("https://image.tmdb.org/t/p/w185/#{show["poster_path"]}", 
-                alt:"#{show["name"]}"), 
-                show_path(show["id"]),
-                :class => "img" 
-            %>
-        </div>
-    </td>
-    <% end %>
-</tr>
-<tr>
-    <% @popular[7...14].each do |show| %>
-    <td>
-        <div>
-            <%= 
-                link_to image_tag("https://image.tmdb.org/t/p/w185/#{show["poster_path"]}", 
-                alt:"#{show["name"]}"), 
-                show_path(show["id"]),
-                :class => "img" 
-            %>            </div>
-    </td>
-    <% end %>
-</tr>
-<% @popular[14...20].each do |show| %>
-<td>
-    <div>
+<% @popular[0...18].each do |show| %>
+    <div class='col my-1'>
         <%= 
-            link_to image_tag("https://image.tmdb.org/t/p/w185/#{show["poster_path"]}", 
-            alt:"#{show["name"]}"), 
-            show_path(show["id"]),
-            :class => "img" 
-        %>            </div>
-</td>
+            link_to image_tag("https://image.tmdb.org/t/p/w185/#{show['poster_path']}", 
+            alt:"#{show['name']}"), 
+            show_path(show['id'])
+        %>
+    </div>
 <% end %>

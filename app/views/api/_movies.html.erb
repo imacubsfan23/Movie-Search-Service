@@ -1,20 +1,17 @@
-<% @queried[0...7].each do |movie| %>
-    <td>
-            <% if movie["poster_path"] %>
-                <%= 
-                    link_to image_tag("https://image.tmdb.org/t/p/w500/#{movie["poster_path"]}",
-                    alt:"#{movie["title"]}"), 
-                    movie_path(movie["id"]),
-                    :class => "img" 
-                %>
-            <% else %>
-                <div class="show-link">
-                    <%= 
-                        link_to "Pictureless: #{movie["title"]}",
-                        movie_path(movie["id"]),
-                        :class => "img" 
-                    %>
-                </div>
-            <% end %>
-    </td>
+<% @queried[0...10].each do |movie| %>
+    <div class='col my-1'>
+        <% if movie['poster_path'] %>
+            <%= 
+                link_to image_tag("https://image.tmdb.org/t/p/w185/#{movie['poster_path']}",
+                alt:"#{movie['title']}"), 
+                movie_path(movie['id'])
+            %>
+        <% else %>
+            <%= 
+                link_to "Pictureless: #{movie['title']}",
+                movie_path(movie['id']),
+                class: 'btn btn-secondary text-light' 
+            %>
+        <% end %>
+    </div>
 <% end %>

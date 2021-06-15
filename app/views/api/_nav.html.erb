@@ -1,0 +1,15 @@
+<nav class='navbar nav'>
+    <div class='container'>
+        <% if params[:mode] == 'movie' %>
+        <%= link_to 'Switch to TV Mode', root_path, class:'btn btn-secondary text-light' %>
+        <% end %>
+        <% if params[:mode] == 'tv' %>
+        <%= link_to 'Switch to Movie Mode', root_path({:mode => 'movie'}), class:'btn btn-secondary text-light' %>
+        <% end %>
+
+        <%= form_tag root_path, {:method => :get} do %>
+            <%= text_field_tag :query, params[:query], class: '' %>
+            <%= submit_tag '⌕', class: 'btn btn-secondary' %>
+        <% end %>
+    </div>
+</nav>

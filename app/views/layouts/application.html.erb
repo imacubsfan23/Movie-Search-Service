@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class='bg-dark'>
   <head>
     <title>Movie Search Service</title>
     <%= csrf_meta_tags %>
@@ -10,17 +10,8 @@
     <link rel="icon" href="https://banner2.kisspng.com/20180320/guw/kisspng-computer-icons-scene-film-icons-windows-scenes-for-5ab1073df22962.2379845815215511659919.jpg" />
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
   </head>
-
-  <body>
-    <nav>
-      <% if params[:mode] == "movie" %>
-        <%= link_to 'Switch to TV Mode', root_path %>
-      <% end %>
-      <% if params[:mode] == "tv" %>
-        <%= link_to 'Switch to Movie Mode', root_path({:mode => "movie"}) %>
-      <% end %>
-    </nav>
-    
+  
+  <body class='bg-dark text-light'>
     <%= yield %>
     <%= yield :javascript %>
   </body>

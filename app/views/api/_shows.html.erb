@@ -1,20 +1,17 @@
-<% @queried[0...7].each do |show| %>
-    <td>
-            <% if show["poster_path"] %>
-                <%= 
-                    link_to image_tag("https://image.tmdb.org/t/p/w500/#{show["poster_path"]}", 
-                    alt:"#{show["name"]}"), 
-                    show_path(show["id"]), 
-                    :class => "img" 
-                %>
-            <% else %>
-                <div class="show-link">
-                    <%= 
-                        link_to "Pictureless: #{show["name"]}", 
-                        show_path(show["id"]), 
-                        :class => "img" 
-                    %>
-                </div>
-            <% end %>
-    </td>
+<% @queried[0...10].each do |show| %>
+    <div class='col my-1'>
+        <% if show['poster_path'] %>
+            <%= 
+                link_to image_tag("https://image.tmdb.org/t/p/w185/#{show['poster_path']}", 
+                alt:"#{show['name']}"), 
+                show_path(show['id'])
+            %>
+        <% else %>
+            <%= 
+                link_to "Pictureless: #{show['name']}", 
+                show_path(show['id']), 
+                class: 'btn btn-secondary text-light' 
+            %>
+        <% end %>
+    </div>
 <% end %>

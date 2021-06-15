@@ -1,55 +1,12 @@
-<h1>Search for Something!</h1>
-<table>
-    
-    <%= form_tag root_path, {:method => :get} do %>
-        <%= text_field_tag :query, params[:query] %>
-        <%= submit_tag "⌕", :class => "search-submit" %>
-    <% end %>
-    
-    <br><br>
-    
-    <% if @queried && @queried[0] %>
-        <h2>Results for "<%= params[:query] %>"</h2>
-        
-        <% if params[:mode] == "tv" %>
-            <%= render 'shows' %>
-        <% elsif params[:mode] == "movie" %>
-            <%= render 'movies' %>
-        <% end %>
-        
-    <% else %>
-        <h2>&#9785; That does not exist &#9785;</h2>
-    <% end %>
-    
-</table>
-
-<h1>Popular <%= params[:mode]=="movies" ? "Movies": "Shows" %></h1>
-<table>
-    
-    <% if params[:mode]=="tv" %>
-        <%= render 'popular_shows' %>
-    <% elsif params[:mode]=="movie" %>
-        <%= render 'popular_movies' %>
-    <% end %>
-    
-    <td>
-        <div>
-            <%= link_to root_path({:mode => params[:mode], :page => params[:page].to_i + 1}) do %>
-                
-                <div class="arrow">&#8594</div>
-                
-            <% end %>
-        </div>
-    </td>
-    
-</table>
+<%= render 'nav' %>
+<%= render 'main' %>
 
 <% content_for :javascript do %>
     <% if params[:page].to_i > 1 %>
-        <script type="text/javascript">
+        <script type='text/javascript'>
             setTimeout(function () {
                 window.scrollTo(0, document.documentElement.scrollHeight);
-            }, 300); 
+            }, 100); 
         </script>
     <% end %>
 <% end %>

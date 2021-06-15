@@ -1,0 +1,27 @@
+<main class='container text-center'>
+    <% if @queried && @queried[0] %>
+        <h2>Top 10 Results for '<%= params[:query] %>'</h2>
+        <div class='row'>
+            <% if params[:mode] == 'tv' %>
+                <%= render 'shows' %>
+            <% elsif params[:mode] == 'movie' %>
+                <%= render 'movies' %>
+            <% end %>
+        </div>
+    <% else %>
+        <h2>&#9785; No results for '<%= params[:query] %>' &#9785;</h2>
+    <% end %>
+
+    <h1>Popular <%= params[:mode]=='movies' ? 'Movies': 'Shows' %></h1>
+    <div class='row'>
+    <% if params[:mode]=='tv' %>
+        <%= render 'popular_shows' %>
+    <% elsif params[:mode]=='movie' %>
+        <%= render 'popular_movies' %>
+    <% end %>
+    <div>
+        <%= link_to root_path({:mode => params[:mode], :query => params[:query],:page => params[:page].to_i + 1}) do %>
+            <button class='btn btn-dark text-light'><h1>&#8594</h1></button>
+        <% end %>
+    </div>
+</main>

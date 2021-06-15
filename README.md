@@ -1,3 +1,5 @@
+## Production Website: https://moviesearchservice.herokuapp.com
+
 # Movie Search Service
 An interface to search shows and movies through themoviedb API
 ## Problem 
@@ -19,11 +21,8 @@ So my only option was to instead make http requests to the api, and HTTParty doe
 ### Not accessing a new page when searching shows or movies
 This made my site feel more like a SPA, which was what I wanted
 ### Scrolling to bottom of page when discover page was greater than 1
-This way the user doesn't have to scroll back to the bottom of the page when looking through popular results
+This way the user doesn't have to manually scroll back to the bottom of the page when looking through popular results
 
-# If I had more time, I would have ...
+# Future Goals
 * Improved the scroll to bottom of page functionality
 * Used React.js to create a better front end, and use redux to simulate my backend
-* Improved the css, because it's barely maintainable. (Not really using the DRY method)
-* Found a better way to switch between modes (tv and movie)
-* Added Actor mode (and completed the rest of the extra credit)

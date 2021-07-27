@@ -16,6 +16,7 @@ gem 'jbuilder'
 gem 'bootsnap', require: false
 
 gem 'nokogiri', '>= 1.11.4'
+gem 'addressable', '>= 2.8.0'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

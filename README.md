@@ -24,5 +24,5 @@ This made my site feel more like a SPA, which was what I wanted
 This way the user doesn't have to manually scroll back to the bottom of the page when looking through popular results
 
 # Future Goals
-* Improved the scroll to bottom of page functionality
-* Used React.js to create a better front end, and use redux to simulate my backend
+* Improve the scroll to bottom of page functionality
+* Use React.js to create a better front end, and use redux to simulate my backend
